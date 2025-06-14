@@ -1,0 +1,16 @@
+version: "3"
+
+tasks:
+  default:
+    silent: false
+    cmds: ["task -l"]
+
+  build:
+    desc: Build a container
+    requires:
+      vars:
+        - dir
+    vars:
+      platform: '{{ .platform | default "linux/arm64" }}'
+    cmds:
+      - docker buildx build --platform {{ .platform }} {{ .dir }}
