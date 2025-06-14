@@ -37,3 +37,15 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN wget https://github.com/homeport/dyff/releases/download/v${DYFF_VERSION}/dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
   && tar -xzvf dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
   && mv dyff /usr/local/bin
+
+RUN adduser --home "$HOME" --shell /bin/bash --disabled-password --gecos '' "$USER"
+
+RUN mkdir "$HOME/.ssh" && \
+  chmod 700 "$HOME/.ssh" && \
+  chown "$USER":"$USER" "$HOME/.ssh"
+
+USER $USER
+
+ENV PATH="/home/abc/.local/bin:$PATH"
+
+WORKDIR $HOME
