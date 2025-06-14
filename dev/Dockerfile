@@ -1,7 +1,7 @@
 FROM alpine
 
 # renovate: datasource=github-releases depName=getsops/sops
-ARG SOPS_VERSION=v3.7.3
+ARG SOPS_VERSION=v3.10.2
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
 ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
