@@ -1,13 +1,13 @@
-FROM ubuntu:24.04
+FROM alpine
 
 # renovate: datasource=github-releases depName=getsops/sops
 ARG SOPS_VERSION=v3.7.3
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
-ARG KUSTOMIZE_VERSION="v5.6.0"
+ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
-ARG DYFF_VERSION="1.7.1"
+ARG DYFF_VERSION=1.7.1
 # renovate: datasource=github-releases depName=helm/helm
-ARG HELM_VERSION="v3.18.2"
+ARG HELM_VERSION=v3.18.2
 
 RUN apt-get update && apt-get install -y gnupg software-properties-common wget git curl
 
