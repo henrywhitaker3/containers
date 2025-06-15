@@ -19,4 +19,4 @@ else
 fi
 
 tar -xzvf kubectx.tar.gz
-md kubectx /usr/local/bin
+mv kubectx /usr/local/bin
