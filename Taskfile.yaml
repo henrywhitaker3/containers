@@ -13,4 +13,4 @@ tasks:
     vars:
       platform: '{{ .platform | default "linux/arm64" }}'
     cmds:
-      - docker buildx build --platform {{ .platform }} {{ .dir }}
+      - docker buildx build --pull --platform {{ .platform }} {{ .dir }}
