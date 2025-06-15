@@ -13,7 +13,7 @@ ARG DYFF_VERSION=1.10.1
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v3.18.2
 
-RUN apk add wget curl git gnupg bash
+RUN apk add wget curl git gnupg bash jq yq
 
 WORKDIR /tmp
 

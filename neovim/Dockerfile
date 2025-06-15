@@ -34,10 +34,8 @@ ARG BUILDARCH
 
 WORKDIR /tmp
 
-RUN wget https://github.com/ahmetb/kubectx/releases/download/${KUBECTX_VERSION}/kubectx_${KUBECTX_VERSION}_linux_${BUILDARCH}.tar.gz \
-  -O kubectx.tar.gz && \
-  tar -xzvf kubectx.tar.gz && \
-  mv kubectx /usr/local/bin
+COPY ./install_kubectx.sh .
+RUN chmod +x install_kubectx.sh && ./install_kubectx.sh ${KUBECTX_VERSION} ${BUILDARCH}
 
 RUN wget https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}/fzf-${FZF_VERSION}-linux_amd64.tar.gz \
   -O fzf.tar.gz && \
