@@ -41,3 +41,5 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN wget https://github.com/homeport/dyff/releases/download/v${DYFF_VERSION}/dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && tar -xzvf dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && mv dyff /usr/local/bin
+
+WORKDIR /

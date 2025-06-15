@@ -16,7 +16,7 @@ jobs:
       matrix:
         dockerfile:
           - toolkit
-          - neovim
+          # - neovim
     steps:
       - uses: actions/checkout@v4
       - uses: docker/login-action@v3
