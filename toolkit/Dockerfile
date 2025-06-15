@@ -1,4 +1,8 @@
-FROM ubuntu:24.04
+ARG BUILDARCH
+
+FROM ghcr.io/opentofu/opentofu:1.9.1-minimal-${BUILDARCH} AS tofu
+
+FROM alpine:3.22.0
 
 # renovate: datasource=github-releases depName=getsops/sops
 ARG SOPS_VERSION=v3.10.2
@@ -9,15 +13,11 @@ ARG DYFF_VERSION=1.10.1
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v3.18.2
 
-RUN apt-get update && apt-get install -y gnupg \
-    software-properties-common \
-    wget \
-    git \
-    curl 
-
-ARG BUILDARCH
+RUN apk add wget curl git gnupg bash
 
 WORKDIR /tmp
+
+ARG BUILDARCH
 
 RUN wget https://get.helm.sh/helm-${HELM_VERSION}-linux-${BUILDARCH}.tar.gz -O helm.tar.gz && \
     tar -xzvf helm.tar.gz && \
@@ -41,5 +41,8 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN wget https://github.com/homeport/dyff/releases/download/v${DYFF_VERSION}/dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && tar -xzvf dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && mv dyff /usr/local/bin
+
+COPY --from=tofu /usr/local/bin/tofu /usr/local/bin/tofu
+RUN ln -s /usr/local/bin/tofu /usr/local/bin/terraform
 
 WORKDIR /
