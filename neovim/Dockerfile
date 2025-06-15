@@ -45,7 +45,7 @@ RUN wget https://github.com/junegunn/fzf/releases/download/v${FZF_VERSION}/fzf-$
   mv fzf /usr/local/bin
 
 COPY --from=neovim /usr/local /usr/local/
-COPY --from=neovim /lib/ld-musl-aarch64.so.1 /lib/
+COPY --from=neovim /lib/ld-musl-* /lib/
 COPY --from=neovim /usr/lib/libgcc_s.so.1 /usr/lib/
 COPY --from=neovim /usr/lib/libintl.so.8 /usr/lib/
 
