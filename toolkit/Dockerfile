@@ -2,7 +2,7 @@ ARG BUILDARCH
 
 FROM ghcr.io/opentofu/opentofu:1.9.1-minimal-${BUILDARCH} AS tofu
 
-FROM alpine:3.22.0
+FROM alpine:3.22.1
 
 # renovate: datasource=github-releases depName=getsops/sops
 ARG SOPS_VERSION=v3.10.2
