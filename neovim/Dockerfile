@@ -19,7 +19,7 @@ FROM ghcr.io/henrywhitaker3/containers/toolkit:latest
 # renovate: datasource=github-releases depName=ahmetb/kubectx
 ARG KUBECTX_VERSION=v0.9.5
 # renovate: datasource=github-releases depName=junegunn/fzf
-ARG FZF_VERSION=0.62.0
+ARG FZF_VERSION=0.65.1
 # renovate: datasource=github-tags depName=golang/go
 ARG GO_VERSION=go1.24.4
 
