@@ -20,6 +20,7 @@ jobs:
           - toolkit
           - kubectl
           - k6/statsd
+          - k6/disruptor
     steps:
       - uses: actions/checkout@v5
       - uses: docker/login-action@v3
