@@ -1,6 +1,6 @@
 ARG BUILDARCH
 
-# renovate: datasource=docker depName=opentofu/opentofu repository=ghcr.io/opentofu/opentofu
+# renovate: datasource=docker depName=opentofu/opentofu repository=oci://ghcr.io
 ARG TOFU_VERSION=v1.10.6
 
 FROM ghcr.io/opentofu/opentofu:${TOFU_VERSION}-minimal-${BUILDARCH} AS tofu
