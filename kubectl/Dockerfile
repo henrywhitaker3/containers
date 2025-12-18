@@ -1,6 +1,6 @@
 ARG BUILDARCH
 
-FROM alpine:3.22.1
+FROM alpine:3.23.2
 
 RUN apk add curl ca-certificates bash jq
 
