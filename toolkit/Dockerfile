@@ -14,7 +14,7 @@ ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
 ARG DYFF_VERSION=1.10.2
 # renovate: datasource=github-releases depName=helm/helm
-ARG HELM_VERSION=v3.18.6
+ARG HELM_VERSION=v3.19.5
 
 RUN apk add wget curl git gnupg bash jq yq
 
