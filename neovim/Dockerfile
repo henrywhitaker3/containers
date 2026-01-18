@@ -1,7 +1,7 @@
 FROM alpine:3.23.2 AS neovim
 
 # renovate: datasource=github-releases depName=neovim/neovim
-ARG NEOVIM_VERSION=v0.11.3
+ARG NEOVIM_VERSION=v0.11.5
 
 RUN apk add autoconf automake cmake curl g++ git gettext gettext-dev libtool \
     make ninja openssl pkgconfig unzip binutils wget
