@@ -12,7 +12,7 @@ ARG SOPS_VERSION=v3.11.0
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
 ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
-ARG DYFF_VERSION=1.10.2
+ARG DYFF_VERSION=1.10.3
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v4.0.5
 
