@@ -1,4 +1,4 @@
-FROM alpine:3.23.2 AS neovim
+FROM alpine:3.23.3 AS neovim
 
 # renovate: datasource=github-releases depName=neovim/neovim
 ARG NEOVIM_VERSION=v0.11.5
