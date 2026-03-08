@@ -15,6 +15,8 @@ ARG KUSTOMIZE_VERSION=v5.6.0
 ARG DYFF_VERSION=1.10.3
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v4.0.5
+# renovate: datasource=github-releases depName=go-task/task
+ARG TASK_VERSION=v3.48.0
 
 RUN apk add wget curl git gnupg bash jq yq
 
@@ -35,7 +37,7 @@ RUN wget https://github.com/getsops/sops/releases/download/${SOPS_VERSION}/sops-
     && chmod 0755 /usr/local/bin/sops \
     && chown root:root /usr/local/bin/sops
 
-RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+RUN sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin "$TASK_VERSION"
 
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/${BUILDARCH}/kubectl" \
     && mv kubectl /usr/local/bin/kubectl \
