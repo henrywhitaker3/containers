@@ -42,7 +42,7 @@ jobs:
     strategy:
       matrix:
         dockerfile:
-          - neovim
+          # - neovim
           - pipelines
           - k6/statsd
           - k6/disruptor
