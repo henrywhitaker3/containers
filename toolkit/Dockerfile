@@ -14,7 +14,7 @@ ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
 ARG DYFF_VERSION=1.10.3
 # renovate: datasource=github-releases depName=helm/helm
-ARG HELM_VERSION=v4.0.5
+ARG HELM_VERSION=v4.1.1
 # renovate: datasource=github-releases depName=go-task/task
 ARG TASK_VERSION=v3.48.0
 
