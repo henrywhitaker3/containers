@@ -8,7 +8,7 @@ FROM ghcr.io/opentofu/opentofu:${TOFU_VERSION}-minimal-${BUILDARCH} AS tofu
 FROM alpine:3.23.2
 
 # renovate: datasource=github-releases depName=getsops/sops
-ARG SOPS_VERSION=v3.11.0
+ARG SOPS_VERSION=v3.12.2
 # renovate: datasource=github-releases depName=kubernetes-sigs/kustomize
 ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
