@@ -4,18 +4,12 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "pin", "digest"],
-      "addLabels": ["dep/patch"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
     },
     {
-      "matchUpdateTypes": ["major"],
-      "addLabels": ["dep/major"]
-    },
-    {
       "matchUpdateTypes": ["minor"],
-      "addLabels": ["dep/minor"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
