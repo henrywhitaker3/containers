@@ -1,7 +1,7 @@
 ARG BUILDARCH
 
 # renovate: datasource=github-releases depName=opentofu/opentofu
-ARG TOFU_VERSION=1.11.6
+ARG TOFU_VERSION=1.12.0
 
 FROM ghcr.io/opentofu/opentofu:${TOFU_VERSION}-minimal-${BUILDARCH} AS tofu
 
