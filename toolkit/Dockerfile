@@ -16,7 +16,7 @@ ARG DYFF_VERSION=1.12.0
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v4.1.4
 # renovate: datasource=github-releases depName=go-task/task
-ARG TASK_VERSION=v3.50.0
+ARG TASK_VERSION=v3.51.1
 
 RUN apk add wget curl git gnupg bash jq yq
 
