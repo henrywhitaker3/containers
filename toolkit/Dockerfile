@@ -49,8 +49,14 @@ RUN wget https://github.com/homeport/dyff/releases/download/v${DYFF_VERSION}/dyf
     && tar -xzvf dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && mv dyff /usr/local/bin
 
-RUN wget https://github.com/terramate-io/terramate/releases/download/v${TERRAMATE_VERSION}/terramate_${TERRAMATE_VERSION}_linux_${BUILDARCH}.tar.gz \
-    && tar -xzvf terramate_${TERRAMATE_VERSION}_linux_${BUILDARCH}.tar.gz \
+RUN case "${BUILDARCH}" in \
+      amd64) TM_ARCH="x86_64" ;; \
+      x86_64) TM_ARCH="x86_64" ;; \
+      arm64) TM_ARCH="arm64" ;; \
+      *) echo "Unsupported architecture: ${BUILDARCH}" && exit 1 ;; \
+    esac && \
+    wget https://github.com/terramate-io/terramate/releases/download/v${TERRAMATE_VERSION}/terramate_${TERRAMATE_VERSION}_linux_${TM_ARCH}.tar.gz \
+    && tar -xzvf terramate_${TERRAMATE_VERSION}_linux_${TM_ARCH}.tar.gz \
     && mv terramate /usr/local/bin
 
 COPY --from=tofu /usr/local/bin/tofu /usr/local/bin/tofu
