@@ -17,6 +17,8 @@ ARG DYFF_VERSION=1.12.0
 ARG HELM_VERSION=v4.1.4
 # renovate: datasource=github-releases depName=go-task/task
 ARG TASK_VERSION=v3.50.0
+# renovate: datasource=github-releases depName=terramate-io/terramate
+ARG TERRAMATE_VERSION=0.17.1
 
 RUN apk add wget curl git gnupg bash jq yq
 
@@ -46,6 +48,10 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN wget https://github.com/homeport/dyff/releases/download/v${DYFF_VERSION}/dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && tar -xzvf dyff_${DYFF_VERSION}_linux_${BUILDARCH}.tar.gz \
     && mv dyff /usr/local/bin
+
+RUN wget https://github.com/terramate-io/terramate/releases/download/v${TERRAMATE_VERSION}/terramate_${TERRAMATE_VERSION}_linux_${BUILDARCH}.tar.gz \
+    && tar -xzvf terramate_${TERRAMATE_VERSION}_linux_${BUILDARCH}.tar.gz \
+    && mv terramate /usr/local/bin
 
 COPY --from=tofu /usr/local/bin/tofu /usr/local/bin/tofu
 RUN ln -s /usr/local/bin/tofu /usr/local/bin/terraform
