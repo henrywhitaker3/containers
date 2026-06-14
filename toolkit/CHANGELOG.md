@@ -1,3 +1,8 @@
+## [toolkit-v1.1.0](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.7..toolkit-v1.1.0) - 2026-06-14
+
+### 🚀 Features
+
+- *(deps)* Update dependency go-task/task to v3.51.1 - ([a7d92ec](https://github.com/henrywhitaker3/containers/commit/a7d92ecfe574e5779d2b7d34f8ba7bc3928783df))
 ## [toolkit-v1.0.7](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.6..toolkit-v1.0.7) - 2026-06-14
 
 ### 🐛 Bug Fixes
