@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      parents: ${{ steps.check.outputs.parents }}
+      children: ${{ steps.check.outputs.children }}
     steps:
       - uses: actions/checkout@v6
         with:
