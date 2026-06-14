@@ -2,7 +2,7 @@ ARG BUILDARCH
 
 FROM alpine:3.23.4
 
-RUN apk add curl ca-certificates bash jq
+RUN apk add curl ca-certificates bash jq yq
 
 WORKDIR /tmp
 
