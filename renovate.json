@@ -3,6 +3,14 @@
   "extends": ["config:recommended"],
   "packageRules": [
     {
+      "matchDepTypes": ["dependencies"],
+      "semanticCommitType": "fix"
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "semanticCommitType": "chore"
+    },
+    {
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "automerge": true,
       "automergeType": "pr",
