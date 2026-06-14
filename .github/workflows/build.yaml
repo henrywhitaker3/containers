@@ -25,6 +25,7 @@ jobs:
       - name: Install git-cliff
         uses: taiki-e/install-action@git-cliff
       - name: Version container
+        id: check
         run: |
           PARENTS=()
           CHILDREN=()
