@@ -28,3 +28,14 @@ tasks:
         - dir
     cmds:
       - ./hack/version.sh {{ .dir }}
+
+  changelog:
+    desc: Generate the changelog
+    requires:
+      vars:
+        - dir
+    cmds:
+      - |
+        dir="{{ .dir }}"
+        sanitised=$(echo $dir | tr '/' '-')
+        git cliff --include-path "$dir/*" --tag-pattern "$sanitised.*" --bump >"$dir/CHANGELOG.md"
