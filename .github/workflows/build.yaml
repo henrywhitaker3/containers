@@ -28,7 +28,7 @@ jobs:
         run: |
           CONTAINERS=()
 
-          for dir in toolkit kubectl pipelines k6/statsd k6/disruptor; do
+          for dir in toolkit kubectl pipelines k6/statsd; do
             result=$(task version dir="$dir")
             echo "[$dir]: $result"
             if [ "$result" != "skip" ]; then
