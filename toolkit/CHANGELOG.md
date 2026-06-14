@@ -3,6 +3,10 @@
 ### 🐛 Bug Fixes
 
 - Remove whitespace - ([66beeb8](https://github.com/henrywhitaker3/containers/commit/66beeb8151b616bc12d3b89c43ac637a8ec55b99))
+
+### ⚙️ Miscellaneous Tasks
+
+- Update versioning script - ([6b6d4a2](https://github.com/henrywhitaker3/containers/commit/6b6d4a27c036125fc8d7b30d289b1831f466c912))
 ## [toolkit-v1.0.1](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.0..toolkit-v1.0.1) - 2026-06-14
 
 ### 🚀 Features

@@ -1,3 +1,8 @@
+## [pipelines-v1.0.3](https://github.com/henrywhitaker3/containers/compare/pipelines-v1.0.2..pipelines-v1.0.3) - 2026-06-14
+
+### ⚙️ Miscellaneous Tasks
+
+- Update versioning script - ([6b6d4a2](https://github.com/henrywhitaker3/containers/commit/6b6d4a27c036125fc8d7b30d289b1831f466c912))
 ## [pipelines-v1.0.2](https://github.com/henrywhitaker3/containers/compare/pipelines-v1.0.1..pipelines-v1.0.2) - 2026-06-14
 
 ### 🐛 Bug Fixes
