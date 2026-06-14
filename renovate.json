@@ -1,26 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": ["config:recommended", ":semanticCommitTypeAll(fix)"],
   "packageRules": [
-    {
-      "matchDepTypes": ["dependencies"],
-      "semanticCommitType": "fix"
-    },
-    {
-      "matchDepTypes": ["devDependencies"],
-      "semanticCommitType": "chore"
-    },
     {
       "matchUpdateTypes": ["patch", "pin", "digest"],
       "automerge": true,
       "automergeType": "pr",
-      "platformAutomerge": true
+      "platformAutomerge": true,
+      "semanticCommitType": "fix"
     },
     {
       "matchUpdateTypes": ["minor"],
       "automerge": true,
       "automergeType": "pr",
-      "platformAutomerge": true
+      "platformAutomerge": true,
+      "semanticCommitType": "feat"
     },
     {
       "matchPackageNames": ["/ghcr.io\\/henrywhitaker3\\/containers\\/.*/"],
