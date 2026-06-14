@@ -1,4 +1,8 @@
-## [kubectl-v1.0.3](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.0.2..kubectl-v1.0.3) - 2026-06-14
+## [kubectl-v1.1.0](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.0.3..kubectl-v1.1.0) - 2026-06-14
+
+### 🚀 Features
+
+- *(deps)* Update alpine docker tag to v3.24.0 - ([71428df](https://github.com/henrywhitaker3/containers/commit/71428dfc9426144fcbd0678b475a94025af2ffdf))
 
 ### 🐛 Bug Fixes
 
