@@ -63,6 +63,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs: [version]
     if: needs.version.outputs.parents != '[]'
     strategy:
@@ -92,6 +94,8 @@ jobs:
 
   build-children:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     needs: [version]
     if: needs.version.outputs.children != '[]'
     strategy:
