@@ -15,8 +15,7 @@ jobs:
     permissions:
       contents: write
     outputs:
-      parents: ${{ steps.check.outputs.parents }}
-      children: ${{ steps.check.outputs.children }}
+      containers: ${{ steps.check.outputs.containers }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -27,35 +26,21 @@ jobs:
       - name: Version container
         id: check
         run: |
-          PARENTS=()
-          CHILDREN=()
+          CONTAINERS=()
 
-          for dir in toolkit kubectl; do
+          for dir in toolkit kubectl pipelines k6/statsd k6/disruptor; do
             result=$(task version dir="$dir")
             echo "[$dir]: $result"
             if [ "$result" != "skip" ]; then
               entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
-              PARENTS+=("$entry")
-              git add "$dir/CHANGELOG.md"
-            fi
-          done
-          for dir in pipelines k6/statsd k6/disruptor; do
-            result=$(task version dir="$dir")
-            echo "[$dir]: $result"
-            if [ "$result" != "skip" ]; then
-              entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
-              CHILDREN+=("$entry")
+              CONTAINERS+=("$entry")
               git add "$dir/CHANGELOG.md"
             fi
           done
 
-          echo "parents=[$(
+          echo "containers=[$(
             IFS=,
-            echo "${PARENTS[*]}"
-          )]" >> "$GITHUB_OUTPUT"
-          echo "children=[$(
-            IFS=,
-            echo "${CHILDREN[*]}"
+            echo "${CONTAINERS[*]}"
           )]" >> "$GITHUB_OUTPUT"
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
@@ -65,42 +50,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: write
     needs: [version]
-    if: needs.version.outputs.parents != '[]'
+    if: needs.version.outputs.containers != '[]'
     strategy:
       matrix:
-        include: ${{ fromJson(needs.version.outputs.parents) }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Tag new version
-        run: |
-          git tag ${{ matrix.tag }}
-          git push origin ${{ matrix.tag }}
-      - uses: docker/login-action@v4
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/setup-qemu-action@v4
-      - uses: docker/setup-buildx-action@v4
-      - uses: docker/build-push-action@v7
-        with:
-          platforms: linux/amd64,linux/arm64
-          context: ${{ matrix.dir }}
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/${{ matrix.dir }}:latest
-            ghcr.io/${{ github.repository }}/${{ matrix.dir }}:${{ matrix.version }}
-
-  build-children:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    needs: [version]
-    if: needs.version.outputs.children != '[]'
-    strategy:
-      matrix:
-        include: ${{ fromJson(needs.version.outputs.children) }}
+        include: ${{ fromJson(needs.version.outputs.containers) }}
     steps:
       - uses: actions/checkout@v6
       - name: Tag new version
