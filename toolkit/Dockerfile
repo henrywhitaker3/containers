@@ -1,6 +1,5 @@
 ARG BUILDARCH
 
-
 # renovate: datasource=github-releases depName=opentofu/opentofu
 ARG TOFU_VERSION=1.11.6
 
