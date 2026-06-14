@@ -13,6 +13,12 @@
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
+    },
+    {
+      "matchPackageNames": ["/ghcr.io\\/henrywhitaker3\\/containers\\/.*/"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
     }
   ],
   "customManagers": [
