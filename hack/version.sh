@@ -5,15 +5,16 @@ if [[ $# -ne 1 ]]; then
 fi
 
 dir=$1
+sanitised=$(echo "$dir" | tr '/' '-')
 
-output=$(git cliff --include-path "$dir/*" --tag-pattern "$(echo "$dir" | tr '/' '-')-v.*" --bump --unreleased --context)
+output=$(git cliff --include-path "$dir/*" --tag-pattern "$sanitised-v.*" --bump --unreleased --context)
 
 if [[ $(echo "$output" | jq -r '.[0].bump_type') == "null" ]]; then
   echo "skip"
   exit 0
 fi
 
-git cliff --include-path "$dir/*" --tag-pattern "$dir-v.*" --bump >"$dir/CHANGELOG.md"
+git cliff --include-path "$dir/*" --tag-pattern "$sanitised.*" --bump >"$dir/CHANGELOG.md"
 
 tag=$(echo "$output" | jq -r '.[0].version')
 version=${tag#"$dir-"}
