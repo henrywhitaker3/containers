@@ -31,8 +31,6 @@ jobs:
               entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
               PARENTS+=("$entry")
               git add "$dir/CHANGELOG.md"
-              git commit -m "chore(docs): update $dir changelog"
-              git push
             fi
           done
           for dir in pipelines k6/statsd k6/disruptor; do
@@ -42,8 +40,6 @@ jobs:
               entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
               CHILDREN+=("$entry")
               git add "$dir/CHANGELOG.md"
-              git commit -m "chore(docs): update $dir changelog"
-              git push
             fi
           done
 
@@ -55,6 +51,9 @@ jobs:
             IFS=,
             echo "${CHILDREN[*]}"
           )]" >> "$GITHUB_OUTPUT"
+      - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore(docs): update changelogs"
 
   build:
     runs-on: ubuntu-latest
