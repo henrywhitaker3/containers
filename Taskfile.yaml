@@ -14,3 +14,17 @@ tasks:
       platform: '{{ .platform | default "linux/arm64" }}'
     cmds:
       - docker buildx build --pull --platform {{ .platform }} {{ .dir }}
+
+  version:all:
+    desc: Run versioning for all containers
+    silent: true
+    cmds:
+      - ./hack/version_all.sh
+
+  version:
+    desc: Version the packages
+    requires:
+      vars:
+        - dir
+    cmds:
+      - ./hack/version.sh {{ .dir }}
