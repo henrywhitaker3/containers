@@ -1,4 +1,9 @@
-## [toolkit-v1.0.2](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.1..toolkit-v1.0.2) - 2026-06-14
+## [toolkit-v1.0.7](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.6..toolkit-v1.0.7) - 2026-06-14
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency getsops/sops to v3.13.1 - ([0bbaa8a](https://github.com/henrywhitaker3/containers/commit/0bbaa8a54c193b82d50f6658202090f4254e1f7d))
+## [toolkit-v1.0.6](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.1..toolkit-v1.0.6) - 2026-06-14
 
 ### 🐛 Bug Fixes
 
