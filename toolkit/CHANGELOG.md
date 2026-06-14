@@ -1,6 +1,7 @@
 ## What's Changed in toolkit-v1.0.2
 * remove whitespace by @henrywhitaker3
 * update changelogs by @henrywhitaker3
+* update changelogs by @henrywhitaker3
 
 **Full Changelog**: https://github.com/henrywhitaker3/containers/compare/toolkit-v1.0.1...toolkit-v1.0.2
 
