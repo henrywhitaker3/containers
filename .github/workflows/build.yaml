@@ -84,7 +84,7 @@ jobs:
 
   build-children:
     runs-on: ubuntu-latest
-    needs: [build, version]
+    needs: [version]
     if: needs.version.outputs.children != '[]'
     strategy:
       matrix:
