@@ -17,11 +17,11 @@ jobs:
     outputs:
       containers: ${{ steps.check.outputs.containers }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
         with:
           fetch-depth: 0
           ref: main
-      - uses: jdx/mise-action@v4
+      - uses: jdx/mise-action@dba19683ed58901619b14f395a24841710cb4925 # v4
         with:
           install: true
           cache: true
@@ -44,7 +44,7 @@ jobs:
             IFS=,
             echo "${CONTAINERS[*]}"
           )]" >> "$GITHUB_OUTPUT"
-      - uses: stefanzweifel/git-auto-commit-action@v7
+      - uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7
         with:
           commit_message: "chore(docs): update changelogs"
 
@@ -59,19 +59,19 @@ jobs:
       matrix:
         include: ${{ fromJson(needs.version.outputs.containers) }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
       - name: Tag new version
         run: |
           git tag ${{ matrix.tag }}
           git push origin ${{ matrix.tag }}
-      - uses: docker/login-action@v4
+      - uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - uses: docker/setup-qemu-action@v4
-      - uses: docker/setup-buildx-action@v4
-      - uses: docker/build-push-action@v7
+      - uses: docker/setup-qemu-action@06116385d9baf250c9f4dcb4858b16962ea869c3 # v4
+      - uses: docker/setup-buildx-action@d7f5e7f509e45cec5c76c4d5afdd7de93d0b3df5 # v4
+      - uses: docker/build-push-action@f9f3042f7e2789586610d6e8b85c8f03e5195baf # v7
         with:
           platforms: linux/amd64,linux/arm64
           context: ${{ matrix.dir }}
