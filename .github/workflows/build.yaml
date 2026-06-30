@@ -44,6 +44,9 @@ jobs:
               CONTAINERS+=("$entry")
               echo "$output" | jq -r '.changelog' > "$dir/CHANGELOG.md"
               git add "$dir/CHANGELOG.md"
+              tag=$(echo "$output" | jq -r '.tag')
+              git tag "$tag"
+              git push origin "$tag"
             fi
           done
 
@@ -58,7 +61,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
       packages: write
     needs: [version]
     if: needs.version.outputs.containers != '[]'
@@ -69,10 +71,6 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           ref: main
-      - name: Tag new version
-        run: |
-          git tag ${{ matrix.tag }}
-          git push origin ${{ matrix.tag }}
       - uses: docker/login-action@650006c6eb7dba73a995cc03b0b2d7f5ca915bee # v4
         with:
           registry: ghcr.io

@@ -11,11 +11,11 @@ output=$(git cliff --include-path "$dir/*" --tag-pattern "$sanitised-v.*" --bump
 skip="false"
 changelog=$(git cliff --include-path "$dir/*" --tag-pattern "$sanitised.*" --bump)
 
-if [[ $(echo "$output" | jq -r '.[0].bump_type') == "null" ]]; then
+if [[ $(echo "$output" | jq -r '.[0].bump_type') == "null" ]] && [[ $(echo "$output" | jq -r '.[0].previous') != "null" ]]; then
   skip="true"
 fi
 
-tag=$(echo "$output" | jq -r '.[0].version // "bongo"')
+tag=$(echo "$output" | jq -r '.[0].version')
 version=${tag#"$sanitised-"}
 
 jq -n \
