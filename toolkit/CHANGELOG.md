@@ -1,9 +1,10 @@
-## [toolkit-v1.2.2](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.2.1..toolkit-v1.2.2) - 2026-06-25
+## [toolkit-v1.2.2](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.2.1..toolkit-v1.2.2) - 2026-06-30
 
 ### 🐛 Bug Fixes
 
 - *(deps)* Update dependency opentofu/opentofu to v1.12.3 - ([99b8d27](https://github.com/henrywhitaker3/containers/commit/99b8d27fc776e0ac1eb5e61bdba7ed8c31a4bc12))
 - *(deps)* Update dependency helm/helm to v4.2.2 - ([b5df031](https://github.com/henrywhitaker3/containers/commit/b5df031e3a35940c1fcdcd05ad72523b083d3397))
+- *(deps)* Update dependency getsops/sops to v3.13.2 - ([fb77300](https://github.com/henrywhitaker3/containers/commit/fb7730032d50da56ab55660b7b51f80263c4a7d3))
 ## [toolkit-v1.2.1](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.2.0..toolkit-v1.2.1) - 2026-06-16
 
 ### 🐛 Bug Fixes
