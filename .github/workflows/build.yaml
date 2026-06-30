@@ -39,7 +39,7 @@ jobs:
             fi
             result=$(task version dir="$dir")
             echo "[$dir]: $result"
-            if [ $(echo "$output" | jq -r '.skip') != "true" ]; then
+            if [[ $(echo "$output" | jq -r '.skip') != "true" ]]; then
               entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
               CONTAINERS+=("$entry")
               echo "$output" | jq -r '.changelog' > "$dir/CHANGELOG.md"
