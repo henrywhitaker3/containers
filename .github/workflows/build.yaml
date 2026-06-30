@@ -40,7 +40,7 @@ jobs:
             output=$(task version dir="$dir")
             echo "[$dir]: $output"
             if [[ $(echo "$output" | jq -r '.skip') != "true" ]]; then
-              entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
+              entry=$(echo "$output" | jq -c --arg dir "$dir" '. + {dir: $dir}')
               CONTAINERS+=("$entry")
               echo "$output" | jq -r '.changelog' > "$dir/CHANGELOG.md"
               git add "$dir/CHANGELOG.md"
@@ -57,7 +57,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@4a55954c782fc1ea30b9056cd3e7a2b40ca8887d # v7
         with:
           commit_message: "chore(docs): update changelogs"
-      - run: echo ${{ steps.check.outputs.containers }}
 
   build:
     runs-on: ubuntu-latest
