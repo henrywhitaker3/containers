@@ -30,7 +30,13 @@ jobs:
         run: |
           CONTAINERS=()
 
-          for dir in toolkit kubectl pipelines k6/statsd; do
+          for dir in *; do
+            if [[ ! -d "$dir" ]]; then
+              continue
+            fi
+            if [[ ! -f "$dir/Dockerfile" ]]; then
+              continue
+            fi
             result=$(task version dir="$dir")
             echo "[$dir]: $result"
             if [ "$result" != "skip" ]; then
