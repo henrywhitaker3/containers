@@ -24,7 +24,7 @@ tasks:
   version:
     desc: Version the packages
     env:
-      GIT_CLIFF__BUMP__INITIAL_TAG: "{{ .dir }}-1.0.0"
+      GIT_CLIFF__BUMP__INITIAL_TAG: "{{ .dir }}-v1.0.0"
     requires:
       vars:
         - dir
@@ -34,7 +34,7 @@ tasks:
   changelog:
     desc: Generate the changelog
     env:
-      GIT_CLIFF__BUMP__INITIAL_TAG: "{{ .dir }}-1.0.0"
+      GIT_CLIFF__BUMP__INITIAL_TAG: "{{ .dir }}-v1.0.0"
     requires:
       vars:
         - dir
