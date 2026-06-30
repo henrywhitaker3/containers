@@ -37,8 +37,8 @@ jobs:
             if [[ ! -f "$dir/Dockerfile" ]]; then
               continue
             fi
-            result=$(task version dir="$dir")
-            echo "[$dir]: $result"
+            output=$(task version dir="$dir")
+            echo "[$dir]: $output"
             if [[ $(echo "$output" | jq -r '.skip') != "true" ]]; then
               entry=$(echo "$result" | jq -c --arg dir "$dir" '. + {dir: $dir}')
               CONTAINERS+=("$entry")
