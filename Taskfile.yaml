@@ -23,6 +23,8 @@ tasks:
 
   version:
     desc: Version the packages
+    env:
+      GIT_CLIFF__BUMP__INITIAL_TAG: "{{ .dir }}-1.0.0"
     requires:
       vars:
         - dir
@@ -31,6 +33,8 @@ tasks:
 
   changelog:
     desc: Generate the changelog
+    env:
+      GIT_CLIFF__BUMP__INITIAL_TAG: "{{ .dir }}-1.0.0"
     requires:
       vars:
         - dir
@@ -39,3 +43,12 @@ tasks:
         dir="{{ .dir }}"
         sanitised=$(echo $dir | tr '/' '-')
         git cliff --include-path "$dir/*" --tag-pattern "$sanitised.*" --bump >"$dir/CHANGELOG.md"
+
+  new:
+    desc: Create a new container
+    requires:
+      vars:
+        - dir
+    cmds:
+      - mkdir -p "{{ .dir }}"
+      - touch "{{ .dir }}/Dockerfile"
