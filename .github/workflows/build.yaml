@@ -40,7 +40,7 @@ jobs:
             output=$(task version dir="$dir")
             echo "[$dir]: $output"
             if [[ $(echo "$output" | jq -r '.skip') != "true" ]]; then
-              entry=$(echo "$output" | jq -c --arg dir "$dir" '. + {dir: $dir}')
+              entry=$(echo "$output" | jq -c --arg dir "$dir" '. + {dir: $dir} | del(.changelog)')
               CONTAINERS+=("$entry")
               echo "$output" | jq -r '.changelog' > "$dir/CHANGELOG.md"
               git add "$dir/CHANGELOG.md"
