@@ -16,7 +16,7 @@ ARG DYFF_VERSION=1.12.0
 # renovate: datasource=github-releases depName=helm/helm
 ARG HELM_VERSION=v4.2.2
 # renovate: datasource=github-releases depName=go-task/task
-ARG TASK_VERSION=v3.51.1
+ARG TASK_VERSION=v3.52.0
 # renovate: datasource=github-releases depName=terramate-io/terramate
 ARG TERRAMATE_VERSION=0.17.1
 
