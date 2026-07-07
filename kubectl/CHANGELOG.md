@@ -1,3 +1,8 @@
+## [kubectl-v1.1.5](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.4..kubectl-v1.1.5) - 2026-07-07
+
+### 🐛 Bug Fixes
+
+- Attach vuln report and sbom - ([7ee2670](https://github.com/henrywhitaker3/containers/commit/7ee2670a15beb5a206e6b65498394a5cbcdce3d7))
 ## [kubectl-v1.1.4](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.3..kubectl-v1.1.4) - 2026-07-07
 
 ### 🐛 Bug Fixes
