@@ -93,7 +93,7 @@ jobs:
       - name: Sign images
         run: |
           image="ghcr.io/${{ github.repository }}/${{ matrix.dir }}@${{ steps.build-and-push.outputs.digest }}"
-          cosign sign --yes "$image"
-          cosign verify "$image" \
-          --certificate-identity=https://github.com/${{ github.repository }}/.github/workflows/build.yaml@refs/heads/main \
-          --certificate-oidc-issuer=https://token.actions.githubusercontent.com
+          mise exec -- cosign sign --yes "$image"
+          mise exec -- cosign verify "$image" \
+            --certificate-identity=https://github.com/${{ github.repository }}/.github/workflows/build.yaml@refs/heads/main \
+            --certificate-oidc-issuer=https://token.actions.githubusercontent.com

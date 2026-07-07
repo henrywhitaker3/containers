@@ -15,5 +15,4 @@ RUN curl -LO "https://dl.k8s.io/release/${K8S_VERSION}/bin/linux/${BUILDARCH}/ku
     && mv kubectl /usr/local/bin/kubectl \
     && chmod +x /usr/local/bin/kubectl
 
-
 WORKDIR /
