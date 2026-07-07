@@ -1,3 +1,8 @@
+## [kubectl-v1.1.2](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.1..kubectl-v1.1.2) - 2026-07-07
+
+### 🐛 Bug Fixes
+
+- Try signing images - ([0eb7060](https://github.com/henrywhitaker3/containers/commit/0eb7060b35be7e9a8e559e027c558217e43209d3))
 ## [kubectl-v1.1.1](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.0..kubectl-v1.1.1) - 2026-06-16
 
 ### 🐛 Bug Fixes
