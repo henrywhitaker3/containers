@@ -91,6 +91,20 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}/${{ matrix.dir }}:${{ matrix.version }}
+      - name: Generate SBOM
+        run: |
+          image="ghcr.io/${{ github.repository }}/${{ matrix.dir }}@${{ steps.build-and-push.outputs.digest }}"
+          mise exec -- trivy image \
+            --format cyclonedx \
+            --output sbom.cdx.json \
+            "$image"
+      - name: Scan for vulnerabilites
+        run: |
+          image="ghcr.io/${{ github.repository }}/${{ matrix.dir }}@${{ steps.build-and-push.outputs.digest }}"
+          mise exec -- trivy image \
+            --format cosign-vuln \
+            --output vuln.json \
+            "$image"
       - name: Sign images
         run: |
           image="ghcr.io/${{ github.repository }}/${{ matrix.dir }}@${{ steps.build-and-push.outputs.digest }}"
@@ -98,3 +112,11 @@ jobs:
           mise exec -- cosign verify "$image" \
             --certificate-identity=https://github.com/${{ github.repository }}/.github/workflows/build.yaml@refs/heads/main \
             --certificate-oidc-issuer=https://token.actions.githubusercontent.com
+          mise exec -- cosign attest --yes \
+            --predicate sbom.cdx.json \
+            --type cyclonedx \
+            "$image"
+          mise exec -- cosign attest --yes \
+            --predicate vuln.json \
+            --type vuln \
+            "$image"
