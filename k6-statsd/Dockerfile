@@ -1,7 +1,7 @@
 FROM golang:1.26.5 AS builder
 
 # renovate: datasource=github-releases depName=grafana/xk6
-ARG XK6_VERSION="v1.4.6"
+ARG XK6_VERSION="v1.4.7"
 
 # renovate: datasource=github-releases depName=LeonAdato/xk6-output-statsd
 ARG K6_STATSD_VERSION="0.3.0"
