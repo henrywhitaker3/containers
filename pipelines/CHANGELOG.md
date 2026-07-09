@@ -1,3 +1,8 @@
+## [pipelines-v1.2.0](https://github.com/henrywhitaker3/containers/compare/pipelines-v1.1.2..pipelines-v1.2.0) - 2026-07-09
+
+### 🚀 Features
+
+- *(deps)* Update ghcr.io/henrywhitaker3/containers/toolkit docker tag to v1.3.0 - ([9ae3c13](https://github.com/henrywhitaker3/containers/commit/9ae3c13644f76916d7e5d65afc128d2bb8207cf7))
 ## [pipelines-v1.1.2](https://github.com/henrywhitaker3/containers/compare/pipelines-v1.1.1..pipelines-v1.1.2) - 2026-07-07
 
 ### 🐛 Bug Fixes
