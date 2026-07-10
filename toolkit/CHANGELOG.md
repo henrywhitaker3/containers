@@ -1,3 +1,8 @@
+## [toolkit-v1.3.1](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.0..toolkit-v1.3.1) - 2026-07-10
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency helm/helm to v4.2.3 - ([ac751d8](https://github.com/henrywhitaker3/containers/commit/ac751d80e9108e8a8918268737f25ff421bb6c80))
 ## [toolkit-v1.3.0](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.2.3..toolkit-v1.3.0) - 2026-07-07
 
 ### 🚀 Features
