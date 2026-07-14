@@ -1,3 +1,8 @@
+## [toolkit-v1.3.2](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.1..toolkit-v1.3.2) - 2026-07-14
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency opentofu/opentofu to v1.12.4 - ([5bacb3a](https://github.com/henrywhitaker3/containers/commit/5bacb3a24d6a2ed91ce4974697a858425d508092))
 ## [toolkit-v1.3.1](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.0..toolkit-v1.3.1) - 2026-07-10
 
 ### 🐛 Bug Fixes
