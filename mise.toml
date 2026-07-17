@@ -1,5 +1,5 @@
 [tools]
-cosign = "v3.1.1"
+cosign = "3.1.2"
 git-cliff = "v2.13.1"
 jq = "1.8.2"
 task = "v3.51.1"
