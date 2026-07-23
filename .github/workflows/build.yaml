@@ -16,6 +16,9 @@ jobs:
       contents: write
     outputs:
       containers: ${{ steps.check.outputs.containers }}
+    concurrency:
+      group: version
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
