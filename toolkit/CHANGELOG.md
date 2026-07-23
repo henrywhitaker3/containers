@@ -1,13 +1,9 @@
-## [toolkit-v1.3.4](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.3..toolkit-v1.3.4) - 2026-07-23
-
-### 🐛 Bug Fixes
-
-- *(deps)* Update dependency opentofu/opentofu to v1.12.5 - ([ca84edb](https://github.com/henrywhitaker3/containers/commit/ca84edb8bd5cdef91a540a629f9ea10b4af9339d))
 ## [toolkit-v1.3.3](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.2..toolkit-v1.3.3) - 2026-07-23
 
 ### 🐛 Bug Fixes
 
 - *(deps)* Update dependency getsops/sops to v3.13.3 - ([59b344b](https://github.com/henrywhitaker3/containers/commit/59b344b39f770d4b1baa69180d989917813b19ea))
+- *(deps)* Update dependency opentofu/opentofu to v1.12.5 - ([ca84edb](https://github.com/henrywhitaker3/containers/commit/ca84edb8bd5cdef91a540a629f9ea10b4af9339d))
 ## [toolkit-v1.3.2](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.1..toolkit-v1.3.2) - 2026-07-14
 
 ### 🐛 Bug Fixes
