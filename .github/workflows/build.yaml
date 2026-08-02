@@ -25,7 +25,7 @@ jobs:
         with:
           fetch-depth: 0
           ref: main
-      - uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4
+      - uses: jdx/mise-action@7e36c90d9ab29c415a2384db3006f3ec8a8cc654 # v4
         with:
           install: true
           cache: true
@@ -79,7 +79,7 @@ jobs:
       matrix:
         include: ${{ fromJson(needs.version.outputs.containers) }}
     steps:
-      - uses: jdx/mise-action@dad1bfd3df957f44999b559dd69dc1671cb4e9ea # v4
+      - uses: jdx/mise-action@7e36c90d9ab29c415a2384db3006f3ec8a8cc654 # v4
         with:
           install: true
           cache: true
