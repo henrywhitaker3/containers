@@ -1,4 +1,8 @@
-## [mise-v1.1.5](https://github.com/henrywhitaker3/containers/compare/mise-v1.1.4..mise-v1.1.5) - 2026-07-23
+## [mise-v1.2.0](https://github.com/henrywhitaker3/containers/compare/mise-v1.1.4..mise-v1.2.0) - 2026-08-02
+
+### 🚀 Features
+
+- *(deps)* Update dependency jdx/mise to v2026.8.0 - ([2dac1de](https://github.com/henrywhitaker3/containers/commit/2dac1de16b77342390e5e517a4b988a387918541))
 
 ### 🐛 Bug Fixes
 
