@@ -1,7 +1,7 @@
 FROM alpine:3.24.1
 
 # renovate: datasource=github-releases depName=jdx/mise
-ARG MISE_VERSION="v2026.8.2"
+ARG MISE_VERSION="v2026.8.3"
 
 ARG BUILDARCH
 
