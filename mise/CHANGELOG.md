@@ -1,4 +1,9 @@
-## [mise-v1.2.0](https://github.com/henrywhitaker3/containers/compare/mise-v1.1.4..mise-v1.2.0) - 2026-09-01
+## [mise-v1.3.1](https://github.com/henrywhitaker3/containers/compare/mise-v1.3.0..mise-v1.3.1) - 2026-09-01
+
+### 🐛 Bug Fixes
+
+- Actually install mise - ([873bb5b](https://github.com/henrywhitaker3/containers/commit/873bb5bf7aeb39d57f7e1ce6d3d6dc6112d8dc49))
+## [mise-v1.3.0](https://github.com/henrywhitaker3/containers/compare/mise-v1.1.4..mise-v1.3.0) - 2026-09-01
 
 ### 🚀 Features
 
