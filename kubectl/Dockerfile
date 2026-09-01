@@ -9,7 +9,7 @@ WORKDIR /tmp
 ARG BUILDARCH
 
 # renovate: datasource=github-releases depName=kubernetes/kubernetes
-ARG K8S_VERSION="v1.36.3"
+ARG K8S_VERSION="v1.37.0"
 
 RUN curl -LO "https://dl.k8s.io/release/${K8S_VERSION}/bin/linux/${BUILDARCH}/kubectl" \
     && mv kubectl /usr/local/bin/kubectl \
