@@ -1,7 +1,7 @@
 FROM alpine:3.24.1
 
 # renovate: datasource=github-releases depName=jdx/mise
-ARG MISE_VERSION="v2026.9.0"
+ARG MISE_VERSION="v2026.9.1"
 
 RUN apk add curl ca-certificates
 
