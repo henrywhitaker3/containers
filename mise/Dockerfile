@@ -1,4 +1,4 @@
-FROM alpine:3.24.1
+FROM alpine:3.24.2
 
 # renovate: datasource=github-releases depName=jdx/mise
 ARG MISE_VERSION="v2026.9.0"

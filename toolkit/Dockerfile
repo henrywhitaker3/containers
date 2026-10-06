@@ -5,7 +5,7 @@ ARG TOFU_VERSION=1.12.5
 
 FROM ghcr.io/opentofu/opentofu:${TOFU_VERSION}-minimal-${BUILDARCH} AS tofu
 
-FROM alpine:3.24.1
+FROM alpine:3.24.2
 
 # renovate: datasource=github-releases depName=getsops/sops
 ARG SOPS_VERSION=v3.13.3
