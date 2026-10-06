@@ -1,3 +1,8 @@
+## [k6-statsd-v1.0.10](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.9..k6-statsd-v1.0.10) - 2026-10-06
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency grafana/xk6 to v1.4.14 - ([8df4a10](https://github.com/henrywhitaker3/containers/commit/8df4a107a88c8cd2cdc67e7879f8d21f8683d5b9))
 ## [k6-statsd-v1.0.9](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.8..k6-statsd-v1.0.9) - 2026-08-02
 
 ### 🐛 Bug Fixes
