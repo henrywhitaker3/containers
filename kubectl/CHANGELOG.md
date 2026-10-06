@@ -1,8 +1,9 @@
-## [kubectl-v1.1.6](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.5..kubectl-v1.1.6) - 2026-07-23
+## [kubectl-v1.1.6](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.5..kubectl-v1.1.6) - 2026-10-06
 
 ### 🐛 Bug Fixes
 
 - *(deps)* Update dependency kubernetes/kubernetes to v1.36.3 - ([c726dfb](https://github.com/henrywhitaker3/containers/commit/c726dfb8b243a5a7b259117189595279b3852394))
+- *(deps)* Update alpine docker tag to v3.24.2 - ([ff39389](https://github.com/henrywhitaker3/containers/commit/ff39389f4fcba06bbf246513f9c1fca2482e6eab))
 ## [kubectl-v1.1.5](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.4..kubectl-v1.1.5) - 2026-07-07
 
 ### 🐛 Bug Fixes

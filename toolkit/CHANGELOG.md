@@ -1,10 +1,16 @@
-## [toolkit-v1.3.3](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.2..toolkit-v1.3.3) - 2026-08-02
+## [toolkit-v1.4.0](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.2..toolkit-v1.4.0) - 2026-10-06
+
+### 🚀 Features
+
+- *(deps)* Update dependency opentofu/opentofu to v1.13.1 - ([8ceb6c9](https://github.com/henrywhitaker3/containers/commit/8ceb6c9c7ad0d179d4c3928ff709fef93d04688b))
 
 ### 🐛 Bug Fixes
 
 - *(deps)* Update dependency getsops/sops to v3.13.3 - ([59b344b](https://github.com/henrywhitaker3/containers/commit/59b344b39f770d4b1baa69180d989917813b19ea))
 - *(deps)* Update dependency opentofu/opentofu to v1.12.5 - ([ca84edb](https://github.com/henrywhitaker3/containers/commit/ca84edb8bd5cdef91a540a629f9ea10b4af9339d))
 - *(deps)* Update dependency terramate-io/terramate to v0.17.2 - ([4098730](https://github.com/henrywhitaker3/containers/commit/4098730d0a26ac2b406b63475fd38ffad19e9739))
+- *(deps)* Update alpine docker tag to v3.24.2 - ([ff39389](https://github.com/henrywhitaker3/containers/commit/ff39389f4fcba06bbf246513f9c1fca2482e6eab))
+- *(deps)* Update dependency terramate-io/terramate to v0.17.3 - ([aee8a1e](https://github.com/henrywhitaker3/containers/commit/aee8a1ebc64b4c85abf614af7a65fbb8972a7f7d))
 ## [toolkit-v1.3.2](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.1..toolkit-v1.3.2) - 2026-07-14
 
 ### 🐛 Bug Fixes

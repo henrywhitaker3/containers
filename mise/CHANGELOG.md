@@ -1,3 +1,12 @@
+## [mise-v1.4.0](https://github.com/henrywhitaker3/containers/compare/mise-v1.3.1..mise-v1.4.0) - 2026-10-06
+
+### 🚀 Features
+
+- *(deps)* Update dependency jdx/mise to v2026.10.3 - ([c2469ff](https://github.com/henrywhitaker3/containers/commit/c2469ffd52acabdf1ea385f65cceb43cd3700205))
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update alpine docker tag to v3.24.2 - ([ff39389](https://github.com/henrywhitaker3/containers/commit/ff39389f4fcba06bbf246513f9c1fca2482e6eab))
 ## [mise-v1.3.1](https://github.com/henrywhitaker3/containers/compare/mise-v1.3.0..mise-v1.3.1) - 2026-09-01
 
 ### 🐛 Bug Fixes
