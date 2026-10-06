@@ -10,6 +10,13 @@ permissions:
   contents: read
   packages: write
 
+# Keep version calculation, changelog updates, builds, and tags in one release
+# transaction. GitHub may replace a pending run in a concurrency group, but it
+# will not cancel the release already in progress.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
 jobs:
   version:
     runs-on: ubuntu-latest
@@ -17,14 +24,15 @@ jobs:
       contents: write
     outputs:
       containers: ${{ steps.check.outputs.containers }}
-    concurrency:
-      group: version
-      cancel-in-progress: false
+      source_sha: ${{ steps.source.outputs.sha }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
           ref: main
+      - name: Record release source
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - uses: jdx/mise-action@2d8d4cafcbd33be2ea37d2b6f5ad595363d1f1ca # v5
         with:
           install: true
@@ -48,9 +56,6 @@ jobs:
               CONTAINERS+=("$entry")
               echo "$output" | jq -r '.changelog' > "$dir/CHANGELOG.md"
               git add "$dir/CHANGELOG.md"
-              tag=$(echo "$output" | jq -r '.tag')
-              git tag "$tag"
-              git push origin "$tag"
             fi
           done
 
@@ -85,7 +90,7 @@ jobs:
           cache: true
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
-          ref: main
+          ref: ${{ needs.version.outputs.source_sha }}
       - uses: docker/login-action@dbcb813823bdd20940b903addbd779551569679f # v4
         with:
           registry: ghcr.io
@@ -130,3 +135,22 @@ jobs:
             --predicate vuln.json \
             --type vuln \
             "$image"
+
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs: [version, build]
+    if: needs.version.outputs.containers != '[]'
+    strategy:
+      matrix:
+        include: ${{ fromJson(needs.version.outputs.containers) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.version.outputs.source_sha }}
+      - name: Tag successful build
+        run: |
+          git tag "${{ matrix.tag }}" "${{ needs.version.outputs.source_sha }}"
+          git push origin "${{ matrix.tag }}"
