@@ -1,4 +1,8 @@
-## [k6-statsd-v1.0.10](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.9..k6-statsd-v1.0.10) - 2026-10-06
+## [k6-statsd-v1.1.0](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.9..k6-statsd-v1.1.0) - 2026-10-06
+
+### 🚀 Features
+
+- *(deps)* Update golang docker tag to v1.27.1 - ([5f8861b](https://github.com/henrywhitaker3/containers/commit/5f8861bac53db6e2c158581d8c0ce7eaea25992d))
 
 ### 🐛 Bug Fixes
 
