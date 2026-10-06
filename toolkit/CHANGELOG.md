@@ -3,6 +3,7 @@
 ### 🚀 Features
 
 - *(deps)* Update dependency opentofu/opentofu to v1.13.1 - ([8ceb6c9](https://github.com/henrywhitaker3/containers/commit/8ceb6c9c7ad0d179d4c3928ff709fef93d04688b))
+- *(deps)* Update dependency go-task/task to v3.54.0 - ([46bc4d7](https://github.com/henrywhitaker3/containers/commit/46bc4d7c0d760d718f92866a7eb93b47a21003f2))
 
 ### 🐛 Bug Fixes
 

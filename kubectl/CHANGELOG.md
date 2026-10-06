@@ -1,4 +1,8 @@
-## [kubectl-v1.1.6](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.5..kubectl-v1.1.6) - 2026-10-06
+## [kubectl-v1.2.0](https://github.com/henrywhitaker3/containers/compare/kubectl-v1.1.5..kubectl-v1.2.0) - 2026-10-06
+
+### 🚀 Features
+
+- *(deps)* Update dependency kubernetes/kubernetes to v1.37.1 - ([9b97ef0](https://github.com/henrywhitaker3/containers/commit/9b97ef07c72101518c75550d647cebb90ec6c6f9))
 
 ### 🐛 Bug Fixes
 
