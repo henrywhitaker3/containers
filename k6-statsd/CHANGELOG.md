@@ -1,1 +1,34 @@
+## [k6-statsd-v1.1.0](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.9..k6-statsd-v1.1.0) - 2026-10-12
 
+### 🚀 Features
+
+- *(deps)* Update golang docker tag to v1.27.1 - ([5f8861b](https://github.com/henrywhitaker3/containers/commit/5f8861bac53db6e2c158581d8c0ce7eaea25992d))
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency grafana/xk6 to v1.4.14 - ([8df4a10](https://github.com/henrywhitaker3/containers/commit/8df4a107a88c8cd2cdc67e7879f8d21f8683d5b9))
+- *(deps)* Update golang docker tag to v1.27.2 - ([7d54286](https://github.com/henrywhitaker3/containers/commit/7d54286dd45c86e02c5a449c118f5643b88fef37))
+## [k6-statsd-v1.0.9](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.8..k6-statsd-v1.0.9) - 2026-08-02
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency grafana/xk6 to v1.4.9 - ([7c998cb](https://github.com/henrywhitaker3/containers/commit/7c998cbd9bf685cb2f494390df1b0e6135447146))
+## [k6-statsd-v1.0.8](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.7..k6-statsd-v1.0.8) - 2026-08-02
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency grafana/xk6 to v1.4.8 - ([c92af00](https://github.com/henrywhitaker3/containers/commit/c92af00efcdb0dceaceccfc92b6fe92f5b4c3544))
+## [k6-statsd-v1.0.7](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.6..k6-statsd-v1.0.7) - 2026-07-09
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update dependency grafana/xk6 to v1.4.7 - ([398d22c](https://github.com/henrywhitaker3/containers/commit/398d22c99d3b2c1a9ef28d48507d0cf68c2a4bdb))
+## [k6-statsd-v1.0.6](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.5..k6-statsd-v1.0.6) - 2026-07-09
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update golang docker tag to v1.26.5 - ([9782286](https://github.com/henrywhitaker3/containers/commit/978228640b32645eb25de7aec3f3349b98a807d6))
+
+### ⚙️ Miscellaneous Tasks
+
+- Discover container dirs - ([31d4906](https://github.com/henrywhitaker3/containers/commit/31d4906efe9a7c48278cf4c7e00816c130bd11f8))
