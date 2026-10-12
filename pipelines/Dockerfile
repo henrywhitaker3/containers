@@ -1,4 +1,4 @@
-FROM ghcr.io/henrywhitaker3/containers/toolkit:v1.3.4
+FROM ghcr.io/henrywhitaker3/containers/toolkit:v1.6.0
 
 ARG USER=abc
 
