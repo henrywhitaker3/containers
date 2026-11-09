@@ -1,4 +1,13 @@
-## [k6-statsd-v1.1.0](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.9..k6-statsd-v1.1.0) - 2026-10-12
+## [k6-statsd-v1.2.0](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.1.1..k6-statsd-v1.2.0) - 2026-11-09
+
+### 🚀 Features
+
+- *(deps)* Update dependency grafana/xk6 to v1.5.0 - ([b3bfd1d](https://github.com/henrywhitaker3/containers/commit/b3bfd1d30eb65443153c0161fc37099dc25fc278))
+
+### 🐛 Bug Fixes
+
+- *(deps)* Update golang docker tag to v1.27.3 - ([e9cc9c4](https://github.com/henrywhitaker3/containers/commit/e9cc9c4746f87b660d6f7a31e3fdd630ba8b98f5))
+## [k6-statsd-v1.1.1](https://github.com/henrywhitaker3/containers/compare/k6-statsd-v1.0.9..k6-statsd-v1.1.1) - 2026-10-12
 
 ### 🚀 Features
 
