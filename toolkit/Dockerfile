@@ -18,7 +18,7 @@ ARG HELM_VERSION=v4.3.1
 # renovate: datasource=github-releases depName=go-task/task
 ARG TASK_VERSION=v3.54.0
 # renovate: datasource=github-releases depName=terramate-io/terramate
-ARG TERRAMATE_VERSION=0.17.3
+ARG TERRAMATE_VERSION=0.17.4
 
 RUN apk add wget curl git gnupg bash jq yq
 
