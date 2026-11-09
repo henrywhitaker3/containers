@@ -1,11 +1,11 @@
 ARG BUILDARCH
 
 # renovate: datasource=github-releases depName=opentofu/opentofu
-ARG TOFU_VERSION=1.13.1
+ARG TOFU_VERSION=1.13.9
 
 FROM ghcr.io/opentofu/opentofu:${TOFU_VERSION}-minimal-${BUILDARCH} AS tofu
 
-FROM alpine:3.24.2
+FROM alpine:3.24.4
 
 # renovate: datasource=github-releases depName=getsops/sops
 ARG SOPS_VERSION=v3.13.3
@@ -14,11 +14,11 @@ ARG KUSTOMIZE_VERSION=v5.6.0
 # renovate: datasource=github-releases depName=homeport/dyff
 ARG DYFF_VERSION=1.12.0
 # renovate: datasource=github-releases depName=helm/helm
-ARG HELM_VERSION=v4.3.0
+ARG HELM_VERSION=v4.3.1
 # renovate: datasource=github-releases depName=go-task/task
 ARG TASK_VERSION=v3.54.0
 # renovate: datasource=github-releases depName=terramate-io/terramate
-ARG TERRAMATE_VERSION=0.17.3
+ARG TERRAMATE_VERSION=0.17.4
 
 RUN apk add wget curl git gnupg bash jq yq
 
