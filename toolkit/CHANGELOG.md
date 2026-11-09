@@ -10,6 +10,7 @@
 - *(deps)* Update dependency opentofu/opentofu to v1.13.9 - ([4fce26f](https://github.com/henrywhitaker3/containers/commit/4fce26fa1c0cced98c9d7ba1583b7e9db1e4acd2))
 - *(deps)* Update alpine docker tag to v3.24.4 - ([5fce9d9](https://github.com/henrywhitaker3/containers/commit/5fce9d9d60d3ee808ef8e7f65293511693dd9f51))
 - *(deps)* Update dependency terramate-io/terramate to v0.17.4 - ([6039d94](https://github.com/henrywhitaker3/containers/commit/6039d94d3b318b57420fa1b6da4ea03fa9842130))
+- Use new multi-arch tag for tofu builds - ([8691a97](https://github.com/henrywhitaker3/containers/commit/8691a972ed4800c38740ead873823a8e4941fa95))
 ## [toolkit-v1.5.0](https://github.com/henrywhitaker3/containers/compare/toolkit-v1.3.2..toolkit-v1.5.0) - 2026-10-06
 
 ### 🚀 Features
