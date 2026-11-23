@@ -1,9 +1,27 @@
 FROM ghcr.io/henrywhitaker3/containers/mise:v1.5.0
 
-COPY mise.toml /root/.config/mise/config.toml
-
-ENV PATH="/root/.local/share/mise/shims:${PATH}"
+ENV HOME=/home/codex \
+    CODEX_HOME=/home/codex/.codex \
+    PATH="/home/codex/.local/share/mise/shims:${PATH}"
 
 RUN apk add --no-cache libgcc libstdc++ bash && \
-    mise bootstrap && \
-    mise reshim
+    adduser -D -u 1000 -s /bin/bash codex && \
+    mkdir -p /workspace && \
+    chown codex:codex /workspace
+
+COPY --chown=codex:codex mise.toml /home/codex/.config/mise/config.toml
+COPY entrypoint.sh /usr/local/bin/entrypoint
+
+RUN chmod 755 /usr/local/bin/entrypoint
+
+USER codex
+
+RUN mise bootstrap && \
+    mise reshim && \
+    chmod -R a+rwX /home/codex/.local/share/mise
+
+ENTRYPOINT ["/usr/local/bin/entrypoint"]
+
+CMD ["bash"]
+
+WORKDIR /workspace
