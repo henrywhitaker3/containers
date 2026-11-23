@@ -1,4 +1,4 @@
-FROM ghcr.io/henrywhitaker3/containers/mise:v1.5.0
+FROM ghcr.io/henrywhitaker3/containers/mise:v1.5.1
 
 ENV HOME=/home/codex \
     CODEX_HOME=/home/codex/.codex \
