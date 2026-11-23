@@ -1,8 +1,6 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-node = "26.13.1"
-npm = "12.2.3"
 ripgrep = "15.2.0"
 claude = "2.1.330"
 codex = "0.171.0"
