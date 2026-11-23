@@ -1,4 +1,4 @@
-FROM golang:1.27.3 AS builder
+FROM golang:1.27.4 AS builder
 
 # renovate: datasource=github-releases depName=grafana/xk6
 ARG XK6_VERSION="v1.5.0"
